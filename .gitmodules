@@ -1,3 +1,6 @@
 [submodule "joystick_node"]
 	path = joystick_node
 	url = git@github.com:Tipriest/joystick_node.git
+[submodule "gazebo_sensors"]
+	path = gazebo_sensors
+	url = git@github.com:Tipriest/gazebo_sensors.git
