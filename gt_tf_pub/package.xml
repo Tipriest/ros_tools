@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package format="2">
+    <name>gt_tf_pub</name>
+    <version>0.0.0</version>
+    <description>收集一个Odometry的消息, 作为tf进行发布</description>
+    <maintainer email="a1503741059@163.com">Tipriest</maintainer>
+    <license>TODO</license>
+
+    <buildtool_depend>catkin</buildtool_depend>
+
+    <depend>roscpp</depend>
+    <depend>nav_msgs</depend>
+    <depend>tf</depend>
+</package>
