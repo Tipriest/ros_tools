@@ -4,3 +4,6 @@
 [submodule "gazebo_sensors"]
 	path = gazebo_sensors
 	url = git@github.com:Tipriest/gazebo_sensors.git
+[submodule "gazebo_worlds"]
+	path = gazebo_worlds
+	url = git@github.com:Tipriest/gazebo_worlds.git
