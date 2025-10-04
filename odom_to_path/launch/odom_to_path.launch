@@ -1,0 +1,17 @@
+<launch>
+    <node name="odom_to_path_1" pkg="odom_to_path" type="odom_to_path" output="screen">
+        <param name="odom_topic" value="/Odometry" />
+        <param name="path_topic" value="/Odometry_path" />
+        <param name="frame_id" value="/camera_init" />
+    </node>
+    <node name="odom_to_path_2" pkg="odom_to_path" type="odom_to_path" output="screen">
+        <param name="odom_topic" value="/gazebo_gt_odom" />
+        <param name="path_topic" value="/gazebo_gt_odom_path" />
+        <param name="frame_id" value="/camera_init" />
+    </node>
+    <node name="odom_to_path_3" pkg="odom_to_path" type="odom_to_path" output="screen">
+        <param name="odom_topic" value="/legged_estimator_odom" />
+        <param name="path_topic" value="/legged_estimator_odom_path" />
+        <param name="frame_id" value="/camera_init" />
+    </node>
+</launch>
