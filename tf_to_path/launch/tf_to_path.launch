@@ -1,0 +1,15 @@
+<launch>
+    <node name="tf_to_path1" pkg="tf_to_path" type="tf_to_path" output="screen">
+        <param name="path_topic" value="gazebo_gt_path" />
+        <param name="frame_id" value="world" />
+        <param name="source_frame" value="world" />
+        <param name="target_frame" value="base" />
+    </node>
+
+    <node name="tf_to_path2" pkg="tf_to_path" type="tf_to_path" output="screen">
+        <param name="path_topic" value="legged_est_path" />
+        <param name="frame_id" value="world" />
+        <param name="source_frame" value="world" />
+        <param name="target_frame" value="base2" />
+    </node>
+</launch>

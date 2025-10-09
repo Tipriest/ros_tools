@@ -38,10 +38,10 @@ private:
 int main(int argc, char **argv) {
   ros::init(argc, argv, "odom_tf_broadcaster");
 
-  ros::NodeHandle private_nh("~");
+  ros::NodeHandle nh("~");
 
   std::string odom_topic;
-  private_nh.param<std::string>("odom_topic", odom_topic, std::string("/odom"));
+  nh.param<std::string>("odom_topic", odom_topic, std::string("/odom"));
 
   OdomTfBroadcaster broadcaster(odom_topic);
 
