@@ -11,7 +11,7 @@ public:
     nh.param<std::string>("odom_topic", odom_topic, "/odom");
     nh.param<std::string>("path_topic", path_topic, "/path");
     nh.param<std::string>("frame_id", frame_id, "odom");
-    nh.param<int>("max_path_length", max_path_length_, 10000);
+    nh.param<int>("max_path_length", max_path_length_, 100000);
 
     // 初始化订阅者和发布者
     odom_sub_ =
