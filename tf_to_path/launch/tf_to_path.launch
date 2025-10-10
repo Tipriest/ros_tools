@@ -12,4 +12,11 @@
         <param name="source_frame" value="world" />
         <param name="target_frame" value="base2" />
     </node>
+
+    <node name="tf_to_path3" pkg="tf_to_path" type="tf_to_path" output="screen">
+        <param name="path_topic" value="slam_est_path" />
+        <param name="frame_id" value="world" />
+        <param name="source_frame" value="world" />
+        <param name="target_frame" value="base_pointlio" />
+    </node>
 </launch>
