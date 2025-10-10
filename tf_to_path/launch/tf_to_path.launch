@@ -17,6 +17,6 @@
         <param name="path_topic" value="slam_est_path" />
         <param name="frame_id" value="world" />
         <param name="source_frame" value="world" />
-        <param name="target_frame" value="base_pointlio" />
+        <param name="target_frame" value="base_slam" />
     </node>
 </launch>
