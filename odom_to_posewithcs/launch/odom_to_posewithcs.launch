@@ -1,0 +1,8 @@
+<launch>
+  <!-- Launch the odom_to_posewithcs_node -->
+  <node name="odom_to_posewithcs_node" pkg="odom_to_posewithcs" type="odom_to_posewithcs_node" output="screen">
+    <!-- Remap topics if necessary -->
+    <remap from="odom" to="/gazebo_odom" />
+    <remap from="pose_with_covariance" to="/amcl_pose" />
+  </node>
+</launch>
