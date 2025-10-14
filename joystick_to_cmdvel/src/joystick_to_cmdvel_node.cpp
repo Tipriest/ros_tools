@@ -14,14 +14,27 @@ private:
   ros::NodeHandle nh_;
   ros::Subscriber joy_sub_;
   ros::Publisher cmd_vel_pub_;
-
+  double clamp(double min_input, double max_input, double input,
+               double min_output, double max_output) {
+    return (input - min_input) / (max_input - min_input) *
+               (max_output - min_output) +
+           min_output;
+  }
+  void deadzone(double deadzone, double &input) {
+    if (abs(input) < abs(deadzone)) {
+      input = 0;
+    }
+  }
   void joyCallback(const sensor_msgs::Joy::ConstPtr &msg) {
     geometry_msgs::Twist cmd_vel_msg;
 
     // Map joystick axes to linear and angular velocities
-    cmd_vel_msg.linear.x = msg->axes[1] * 0.00005; // Left stick vertical axis
-    cmd_vel_msg.angular.z =
-        msg->axes[0] * 0.00005; // Left stick horizontal axis
+    cmd_vel_msg.linear.x = clamp(-32767, 32767, msg->axes[1], -1.0,
+                                 1.0); // Left stick vertical axis
+    cmd_vel_msg.angular.z = -clamp(-32767, 32767, msg->axes[2], -1.0,
+                                   1.0); // Left stick horizontal axis
+    deadzone(0.04, cmd_vel_msg.linear.x);
+    deadzone(0.04, cmd_vel_msg.angular.z);
     std::cout << "linear.x = " << cmd_vel_msg.linear.x << "angular.z"
               << cmd_vel_msg.angular.z << std::endl;
     // Publish the Twist message
