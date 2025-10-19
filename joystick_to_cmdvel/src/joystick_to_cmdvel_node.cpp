@@ -25,6 +25,13 @@ private:
       input = 0;
     }
   }
+  template <typename T0, typename T1>
+  inline T0 killZeroOffset(T0 a, const T1 limit) {
+    if ((a > -limit) && (a < limit)) {
+      a = 0;
+    }
+    return a;
+  }
   void joyCallback(const sensor_msgs::Joy::ConstPtr &msg) {
     geometry_msgs::Twist cmd_vel_msg;
 
