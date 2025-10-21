@@ -12,6 +12,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   sensor_msgs
   geometry_msgs
+  nav_msgs
   tf2_ros
 )
 
@@ -109,7 +110,7 @@ find_package(pinocchio REQUIRED)
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
   INCLUDE_DIRS include
-  CATKIN_DEPENDS roscpp sensor_msgs geometry_msgs tf2_ros
+  CATKIN_DEPENDS roscpp sensor_msgs geometry_msgs nav_msgs tf2_ros
 )
 
 ###########

@@ -1,0 +1,6 @@
+<launch>
+    <node name="legged_odometry" pkg="legged_odometry" type="legged_odometry" output="screen">
+    </node>
+    <node pkg="rviz" name="rviz" type="rviz" args="-d $(find legged_odometry)/config/rviz.rviz" />
+
+</launch>

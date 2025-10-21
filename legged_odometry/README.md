@@ -1,4 +1,30 @@
 # README.md
+
+## ROS接口与运行
+
+- 订阅的话题：
+   - `~joint_state_topic` (sensor_msgs/JointState，默认 `/elspider_mini/joint_states`)
+   - `~imu_topic` (sensor_msgs/Imu，可选，默认 `/imu/data`，当 `~use_imu:=true` 时使用)
+   - 足端触地力：`/visual/<LEG>_foot_contact/the_force` (geometry_msgs/WrenchStamped)，`<LEG>` ∈ {LB, LF, LM, RB, RF, RM}
+      - 触地判据：`|Fz| >= ~contact_force_threshold`（默认 5.0）
+
+- 发布的话题与TF：
+   - `odom` (nav_msgs/Odometry)
+   - TF：`~odom_frame` -> `~base_frame`（默认 `odom` -> `base_link`）
+
+- 关键参数：
+   - `~urdf_path`：URDF 文件路径（默认指向 elspider_mini 的 URDF）
+   - `~base_frame`：基座 frame（默认 `base_link`）
+   - `~odom_frame`：里程计世界帧（默认 `odom`）
+   - `~foot_frames`：六个足端 frame 名称数组，顺序对应 {LB, LF, LM, RB, RF, RM}
+   - `~use_imu`：是否融合 IMU（默认 false；只融合 roll/pitch，保留运动学估计的 yaw）
+
+- 运行：
+   1. 确保 `urdf_path` 指向正确的 URDF，且 `foot_frames` 与模型一致；
+   2. 编译：`catkin build legged_odometry`；
+   3. 运行节点：`rosrun legged_odometry legged_odometry_node`；
+   4. 可视化：查看 TF 树与 `odom` 话题。
+
 #### 默认参数
 以程序刚开始运行的时候机器人所在的位置为世界坐标系的原点
 机器人的六条腿的ID分配(按照pinocchio读入的顺序来):
