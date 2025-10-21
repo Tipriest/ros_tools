@@ -1,0 +1,8 @@
+<launch>
+  <!-- Launch the joystick_to_cmdvel_node -->
+  <node name="joystick_to_cmdvel_node" pkg="joystick_to_cmdvel" type="joystick_to_cmdvel_node" output="screen">
+    <!-- Remap topics if necessary -->
+    <remap from="joy" to="/robot_control/joystick_msgs" />
+    <remap from="cmd_vel" to="/cmd_vel" />
+  </node>
+</launch>

@@ -1,0 +1,6 @@
+<launch>
+    <!-- 从gazebo插件输出的绝对位置到tf树的转换 -->
+    <node pkg="odom_to_tf" type="odom_to_tf" name="odom_to_tf" output="screen">
+        <param name="odom_topic" value="/gazebo_odom" />
+    </node>
+</launch>

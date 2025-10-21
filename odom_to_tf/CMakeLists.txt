@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(gt_tf_pub)
+project(odom_to_tf)
 
 find_package(catkin REQUIRED COMPONENTS
   roscpp
@@ -15,5 +15,5 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
-add_executable(gt_tf_pub src/gt_tf_pub.cpp)
-target_link_libraries(gt_tf_pub ${catkin_LIBRARIES})
+add_executable(odom_to_tf src/odom_to_tf.cpp)
+target_link_libraries(odom_to_tf ${catkin_LIBRARIES})

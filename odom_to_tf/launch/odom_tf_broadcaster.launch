@@ -1,8 +1,8 @@
 <launch>
     <!-- 可以灵活设置订阅的话题 -->
-    <node pkg="gt_tf_pub"
-          type="gt_tf_pub"
-          name="gt_tf_pub"
+    <node pkg="odom_to_tf"
+          type="odom_to_tf"
+          name="odom_to_tf"
           output="screen">
         <param name="odom_topic" value="/ground_truth" />
     </node>
