@@ -1,0 +1,16 @@
+<launch>
+    <!-- Override these if your paths differ -->
+    <arg name="urdf_path" default="/home/tipriest/Documents/legged_localization_benchmark/src/unitree_ros/robots/hexapod_description/elspider_mini_description/urdf/elsipder_mini.urdf"/>
+    <arg name="mesh_dir" default="/home/tipriest/Documents/legged_localization_benchmark/src/unitree_ros/robots/hexapod_description/elspider_mini_description"/>
+    <arg name="joint_state_topic" default="/elspider_mini/joint_states"/>
+    <arg name="free_flyer" default="false"/>
+    <arg name="open_viewer" default="true"/>
+
+    <node pkg="meshcat_vis" type="meshcat_vis_node.py" name="meshcat_vis" output="screen">
+        <param name="urdf_path" value="$(arg urdf_path)"/>
+        <param name="mesh_dir" value="$(arg mesh_dir)"/>
+        <param name="joint_state_topic" value="$(arg joint_state_topic)"/>
+        <param name="free_flyer" value="$(arg free_flyer)"/>
+        <param name="open_viewer" value="$(arg open_viewer)"/>
+    </node>
+</launch>
