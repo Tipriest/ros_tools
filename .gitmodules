@@ -7,3 +7,6 @@
 [submodule "gazebo_worlds"]
 	path = gazebo_worlds
 	url = git@github.com:Tipriest/gazebo_worlds.git
+[submodule "joystick_to_cmdvel"]
+	path = joystick_to_cmdvel
+	url = git@github.com:Tipriest/joystick_to_cmdvel.git
