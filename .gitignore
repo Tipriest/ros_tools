@@ -1,2 +1,4 @@
 .vscode/
 build/
+rostopic_to_video/depth_raw/
+video_frame_extractor/config/frames
